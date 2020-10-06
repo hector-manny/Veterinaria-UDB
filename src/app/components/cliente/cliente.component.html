@@ -34,10 +34,10 @@
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-plus-circle"></i> Registrar
                 </button>
-                <button class="btn btn-secondary" type="reset" (click)="resetForm(clienteForm)">
+                <button class="btn btn-success" type="reset" (click)="resetForm(clienteForm)">
                     <i class="fas fa-sync-alt"></i> Limpiar
                 </button>
-                <button class="btn btn-secondary" (click)="clienteForm.valid ? generatePdf('open') : ''">
+                <button class="btn btn-warning" (click)="clienteForm.valid ? generatePdf('open') : ''">
                   <i class="far	fa-clipboard">
                 </i> <span>Generar Factura</span></button>
             </div>
