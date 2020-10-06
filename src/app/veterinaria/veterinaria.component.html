@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a7e0aa;">
+
+    <a class="navbar-brand" href="#">Veterinaria</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Registro Clientes <span class="sr-only">(current)</span></a>
+        
+      </div>
+    </div>
+  </nav>
+<div class="container">
+
+    <!-- Image and text -->
+<!-- Image and text -->
+<br>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Registro de Clientes</h1>
+          <p class="lead">"Los animales no son propiedades o cosas, sino organismos vivientes, sujetos de una vida, que merecen nuestra compasión, respeto, amistad y apoyo"</p>
+        </div>
+      </div>
+    <div class="form-row">
+      <div class="col">
+        <input type="text" [(ngModel)]="nombre" class="form-control" placeholder="Nombre">
+      </div>
+      <div class="col">
+        <input type="number" [(ngModel)]="dui" class="form-control" placeholder="DUI sin guión">
+      </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="col">
+          <input type="text" [(ngModel)]="mascota" class="form-control" placeholder="Nombre de Mascota">
+        </div>
+        <div class="col">
+            <textarea [(ngModel)]="tratamiento" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tratamiento"></textarea>
+        </div>
+        <div class="col">
+            <textarea [(ngModel)]="medicamento" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Medicamento"></textarea>
+         </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col">
+          <input type="number" [(ngModel)]="costo" class="form-control" placeholder="Costo $">
+        </div>
+      </div>
+      <br>
+      <button type="button" class="btn  btn-lg" style="background-color: #a7e0aa;" (click)="registrar()">Registrar</button>
+      <br>
+      <br>
+
+
+
+      <table class="table" [hidden]="contador == 0">
+        <thead style="background-color: #a7e0aa;">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">DUI</th>
+            <th scope="col">Nombre Mascota</th>
+            <th scope="col">Tratamiento</th>
+            <th scope="col">Medicamento</th>
+            <th scope="col">Costo $</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let templeado of registro">
+            <td>{{templeado.nombre}}</td>
+            <td>{{templeado.dui}}</td>
+            <td>{{templeado.mascota}}</td>
+            <td>{{templeado.tratamiento}}</td>
+            <td>{{templeado.medicamento}}</td>
+            <td>{{templeado.costo}}</td>
+            </tr>
+        </tbody>
+      </table>
+    
+  
+   
+
+</div>

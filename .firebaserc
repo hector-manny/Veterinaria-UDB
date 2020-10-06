@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "app1-43aef": {
+      "hosting": {
+        "proyectoBaseAngular": [
+          "app1-43aef"
+        ]
+      }
+    }
+  }
+}

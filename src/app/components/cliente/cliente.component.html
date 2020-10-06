@@ -1,0 +1,51 @@
+
+
+
+        <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'productForm' -->
+        <form id="cform" #clienteForm="ngForm" (ngSubmit)="onSubmit(clienteForm)">
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="clienteService.selectedCliente.$key">
+          <div class="col">
+                <input type="text"  name="nombre" #name="ngModel" class="form-control" [(ngModel)]="clienteService.selectedCliente.nombre"  placeholder="Nombre">
+              </div>
+              <br>
+              <div class="col">
+                <input type="number" name="dui" class="form-control"  [(ngModel)]="clienteService.selectedCliente.dui" placeholder="DUI sin guión">
+              </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+                  <input type="text" name="mascota" class="form-control" placeholder="Nombre de Mascota" [(ngModel)]="clienteService.selectedCliente.mascota" >
+                </div>
+                <div class="col">
+                    <textarea name="tratamiento" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tratamiento" [(ngModel)]="clienteService.selectedCliente.tratamiento" ></textarea>
+                </div>
+                <div class="col">
+                    <textarea name="medicamento" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Medicamento" [(ngModel)]="clienteService.selectedCliente.medicamento" ></textarea>
+                 </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col">
+                  <input type="number" name="costo" class="form-control" placeholder="Costo $" [(ngModel)]="clienteService.selectedCliente.costo" >
+                </div>
+              </div>
+              <br>
+              <div class="form-group">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-plus-circle"></i> Registrar
+                </button>
+                <button class="btn btn-secondary" type="reset" (click)="resetForm(clienteForm)">
+                    <i class="fas fa-sync-alt"></i> Limpiar
+                </button>
+                <button class="btn btn-secondary" (click)="clienteForm.valid ? generatePdf('open') : ''">
+                  <i class="far	fa-clipboard">
+                </i> <span>Generar Factura</span></button>
+            </div>
+                           
+        </form>
+            
+
+
+
+            
+            

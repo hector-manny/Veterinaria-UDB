@@ -1,0 +1,45 @@
+
+<div class="row">
+  <h3>Filtrar</h3>
+  <div class="col">
+    <div class="form-group">
+      <input type="text" name="filterCliente" id="" class="form-control" placeholder="Buscar" [(ngModel)]="filterCliente" >
+    </div>
+  </div>
+  
+</div>
+
+<table id="tclientes" class="table  table-hover"  >
+
+    <thead style="background-color: #a7e0aa;">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">DUI</th>
+        <th scope="col">Nombre Mascota</th>
+        <th scope="col">Tratamiento</th>
+        <th scope="col">Medicamento</th>
+        <th scope="col">Costo $</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clienteList | filter:filterCliente">
+        <td>{{cliente.$key}}</td>              
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.dui}}</td>
+                    <td>{{cliente.mascota}}</td>
+                    <td>{{cliente.tratamiento}}</td>
+                    <td>{{cliente.medicamento}}</td>
+                    <td>{{cliente.costo}}</td>
+                    <td>
+                        <a class="btn btn-secondary text-white" (click)="onEdit(cliente)">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger text-white" (click)="onDelete(cliente.$key)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                      
+                    </td>
+        </tr>
+    </tbody>
+  </table>
