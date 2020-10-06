@@ -5,7 +5,7 @@
         <form id="cform" #clienteForm="ngForm" (ngSubmit)="onSubmit(clienteForm)">
           <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="clienteService.selectedCliente.$key">
           <div class="col">
-                <input type="text"  name="nombre" #name="ngModel" class="form-control" [(ngModel)]="clienteService.selectedCliente.nombre"  placeholder="Nombre">
+                <input type="text"  name="nombre" #name="ngModel" class="form-control" [(ngModel)]="clienteService.selectedCliente.nombre"  placeholder="Nombre Del Cliente">
               </div>
               <br>
               <div class="col">
@@ -26,7 +26,7 @@
               <br>
               <div class="form-row">
                 <div class="col">
-                  <input type="number" name="costo" class="form-control" placeholder="Costo $" [(ngModel)]="clienteService.selectedCliente.costo" >
+                  <input type="number" name="costo" class="form-control" placeholder="Costo de Medicamento $" [(ngModel)]="clienteService.selectedCliente.costo" >
                 </div>
               </div>
               <br>
