@@ -1,29 +1,31 @@
-<p>verify-email works!</p>
 
-<div class="displayTable">
-    <div class="displayTableCell">
-  
+
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+     <div class="card">
       <div class="authBlock">
-        <h3>Thank You for Registering</h3>
-  
+        <h3 class="text-center">Gracias por Registrarte</h3>
+  <br>
         <div class="formGroup" *ngIf="authService.userData as user">
-          <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
-          <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+          <p class="text-center">hemos enviado un correo a tu direccion <strong>{{user.email}}</strong>.</p>
+          <p class="text-center">porfavor revisa tu bandeja de entrada de tu direccion de correo y abre el link para verificar tu direccion de correo.</p>
         </div>
         
         <!-- Calling SendVerificationMail() method using authService Api -->
         <div class="formGroup">
-          <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+          <button type="button" class="btn btn-primary btn-block" (click)="authService.SendVerificationMail()">
             <i class="fas fa-redo-alt"></i>
-            Resend Verification Email
+            Reenviar Verificacion de Correo
           </button>
         </div>
   
       </div>
-  
+  <br>
       <div class="redirectToLogin">
-        <span>Go back to?<span class="redirect" routerLink="/sign-in"> Sign in</span></span>
+        <span>Quieres regresar?<a class="redirect" routerLink="/sign-in"> Iniciar sesion</a></span>
+        <br>
       </div>
-  
+      <br>
+     </div>
     </div>
   </div>
